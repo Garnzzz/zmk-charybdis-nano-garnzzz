@@ -68,7 +68,8 @@
             bindings = <&kp LC(A)>;
             key-positions = <0 1>;
         };
-    };
+     };   
+};
 
     behaviors {
         sf_shift: sf_shift {
