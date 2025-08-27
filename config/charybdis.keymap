@@ -68,7 +68,7 @@
             bindings = <&kp LC(A)>;
             key-positions = <0 1>;
         };
-     };   
+    };
 
     behaviors {
         sf_shift: sf_shift {
@@ -81,13 +81,16 @@
         };
     };
 
-    
-behaviors {};
+    behaviors {
+    };
 
-behaviors {};
+    behaviors {
+    };
 
-behaviors {};
-keymap {
+    behaviors {
+    };
+
+    keymap {
         compatible = "zmk,keymap";
 
         Base {
@@ -96,7 +99,7 @@ keymap {
 &mt LEFT_CONTROL A  &mt LEFT_GUI S  &mt LEFT_ALT D  &mt LEFT_SHIFT F  &kp G          &mt HOME H      &mt RIGHT_SHIFT J  &mt RIGHT_ALT K  &mt RIGHT_GUI L  &mt SEMI APOS
 &mt LC(Z) Z         &mt LC(X) X     &mt LC(C) C     &mt LC(V) V       &kp B          &mt END N       &kp M              &kp COMMA        &kp DOT          &lt 3 SLASH
                                     &to 3           &lt 1 BACKSPACE   &mt RET TAB    &mt ESCAPE RET  &lt 2 SPACE
->;
+            >;
 
             label = "BASE";
         };
@@ -107,7 +110,7 @@ keymap {
 &mt LCTRL F1  &kp F2        &mt LEFT_ALT F3  &mt LEFT_SHIFT F4  &kp F5     &kp F6         &kp F7     &kp F8     &kp F9  &kp LS(F10)
 &kp LC(Z)     &kp LC(X)     &kp LC(C)        &kp LC(CAPS)       &kp F11    &kp F12        &kp COLON  &kp SLASH  &trans  &mt PAUSE_BREAK MINUS
                             &trans           &trans             &trans     &kp BACKSPACE  &kp RET
->;
+            >;
 
             label = "LOWER";
         };
@@ -118,7 +121,7 @@ keymap {
 &kp LCTRL  &kp DOLLAR  &kp UNDER             &kp LSHFT         &kp ASTRK         &kp PAGE_UP      &mt RSHFT LEFT       &mt RIGHT_ALT UP_ARROW  &mt RIGHT_GUI DOWN_ARROW  &mt RCTRL RIGHT
 &kp POUND  &kp CARET   &kp PLUS              &kp AMPS          &kp PIPE          &kp PAGE_DOWN    &kp LA(PRINTSCREEN)  &none                   &kp TILDE                 &mt PAUSE_BREAK QUESTION
                        &key_repeat           &trans            &trans            &trans           &trans
->;
+            >;
 
             label = "RAISE";
         };
@@ -129,7 +132,7 @@ keymap {
 &kp C_MUTE    &kp C_VOL_DN  &kp C_VOLUME_UP  &kp C_PLAY_PAUSE  &msc MOVE_X(-10)    &msc MOVE_Y(10)    &mkp LCLK     &mkp RCLK  &none     &none
 &trans        &mo 0         &kp C_PREV       &kp C_NEXT        &msc MOVE_X(10)     &msc MOVE_Y(-10)   &mkp MCLK     &mkp MB4   &mkp MB5  &none
                             &to 0            &none             &none               &none              &none
->;
+            >;
 
             label = "MEDIA";
         };
@@ -140,10 +143,18 @@ keymap {
 &kp LCTRL     &kp LEFT_GUI  &kp LEFT_ALT  &kp LSHFT     &kp HOME    &kp DEL       &kp LEFT   &kp UP_ARROW  &kp DOWN  &kp RIGHT
 &kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &kp END     &none         &kp COLON  &kp MINUS     &trans    &none
                             &kp ESCAPE    &trans        &trans      &trans        &trans
->;
+            >;
 
             label = "CHANGE";
         };
+
+        layer_5 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans    &trans  &trans
+            >;
+        };
     };
 };
-
