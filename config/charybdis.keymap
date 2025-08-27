@@ -23,6 +23,72 @@
 };
 
 / {
+        /* input config for mouse move mode */
+
+    trackball_listener {
+        compatible = "zmk,input-behavior-listener";
+        device = <&vtrackball>;
+        layers = <0 3 4>;
+        evt-type = <INPUT_EV_REL>;
+        x-input-code = <INPUT_REL_X>;
+        y-input-code = <INPUT_REL_Y>;
+        scale-multiplier = <1>;
+        scale-divisor = <2>;
+
+        // bindings = <&ib_toggle_layer 7>;
+    };
+
+    /* input config for snipe mode */
+
+    trackball_snipe_listener {
+        compatible = "zmk,input-behavior-listener";
+        device = <&vtrackball>;
+        layers = <5>;
+        evt-type = <INPUT_EV_REL>;
+        x-input-code = <INPUT_REL_X>;
+        y-input-code = <INPUT_REL_Y>;
+        scale-multiplier = <1>;
+        scale-divisor = <4>;
+    };
+
+    /* input config for mouse scroll mode */
+
+    trackball_scroll_listener {
+        compatible = "zmk,input-behavior-listener";
+        device = <&vtrackball>;
+        layers = <6>;
+        evt-type = <INPUT_EV_REL>;
+        x-input-code = <INPUT_REL_MISC>;
+        y-input-code = <INPUT_REL_WHEEL>;
+        y-invert;
+        bindings = <&ib_wheel_scaler 1 14>;
+    };
+
+    /* define a resolution down scaler only for INPUT_REL_WHEEL */
+
+    ib_wheel_scaler: ib_wheel_scaler {
+        compatible = "zmk,input-behavior-scaler";
+        #binding-cells = <2>;
+        evt-type = <INPUT_EV_REL>;
+        input-code = <INPUT_REL_WHEEL>;
+    };
+
+    /* adjust cooldown waiting period for mouse key layer after activated */
+
+    ib_toggle_layer: ib_toggle_layer {
+        compatible = "zmk,input-behavior-tog-layer";
+        #binding-cells = <1>;
+        time-to-live-ms = <750>;
+    };
+
+    // #define BASE    0
+    // #define LOWER   1
+    // #define RAISE   2
+    // #define MEDIA   3
+    // #define CHANGE  4
+    // #define SNIPER  5
+    // #define SCROLL  6
+
     combos {
         compatible = "zmk,combos";
 
@@ -85,6 +151,8 @@
 &mt LC(Z) Z         &mt LC(X) X     &mt LC(C) C     &mt LC(V) V       &kp B          &mt END N       &kp M              &kp COMMA        &kp DOT          &lt 3 SLASH
                                     &to 3           &lt 1 BACKSPACE   &mt RET TAB    &mt ESCAPE RET  &lt 2 SPACE
             >;
+
+            label = "BASE";
         };
 
         LWR {
@@ -94,6 +162,8 @@
 &kp LC(Z)     &kp LC(X)     &kp LC(C)        &kp LC(CAPS)       &kp F11    &kp F12        &kp COLON  &kp SLASH  &trans  &mt PAUSE_BREAK MINUS
                             &trans           &trans             &trans     &kp BACKSPACE  &kp RET
             >;
+
+            label = "LOWER";
         };
 
         RSE {
@@ -103,6 +173,8 @@
 &kp POUND  &kp CARET   &kp PLUS              &kp AMPS          &kp PIPE          &kp PAGE_DOWN    &kp LA(PRINTSCREEN)  &none                  &none           &mt PAUSE_BREAK QUESTION
                        &trans                &trans            &trans            &trans           &trans
             >;
+
+            label = "RAISE";
         };
 
         MED {
@@ -112,6 +184,8 @@
 &none         &none         &kp C_PREV       &kp C_NEXT        &none           &none              &mkp MCLK     &mkp MB4   &mkp MB5  &none
                             &to 0            &none             &none           &none              &none
             >;
+
+            label = "MEDIA";
         };
 
         CHG {
@@ -121,6 +195,8 @@
 &kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &kp END     &none         &kp COLON  &kp MINUS     &trans    &studio_unlock
                             &kp ESCAPE    &trans        &trans      &trans        &trans
             >;
+
+            label = "CHANGE";
         };
 
         /* layer_2 {
