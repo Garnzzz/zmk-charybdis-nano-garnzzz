@@ -1,78 +1,125 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <dt-bindings/zmk/rgb.h>
 
 &lt {
     tapping-term-ms = <200>;
     flavor = "balanced";
-    quick-tap-ms = <150>;
+    quick-tap-ms = <115>;
+    require-prior-idle-ms = <80>;
+    hold-trigger-on-release;
+    hold-trigger-key-positions = <31 34>;
+};
+
+&mt {
+    quick-tap-ms = <115>;
+    require-prior-idle-ms = <50>;
+    flavor = "balanced";
+    hold-trigger-key-positions = <11 12 13 14 30 32 33 16 17 18>;
+    hold-trigger-on-release;
 };
 
 / {
-    macros {
-        To1_macro: To1_macro {
-            compatible = "zmk,behavior-macro";
-            label = "To1_macro";
-            #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_EFF &rgb_ug RGB_COLOR_HSB(128,100,50) &to 1>;
+    combos {
+        compatible = "zmk,combos";
+
+        LH.Lclick {
+            bindings = <&mkp LCLK>;
+            key-positions = <23 22>;
         };
 
-        To0_macro: To0_macro {
-            compatible = "zmk,behavior-macro";
-            label = "To0_macro";
-            #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_EFR &to 0>;
+        LH.Rclick {
+            bindings = <&mkp RCLK>;
+            key-positions = <22 21>;
         };
 
-        To2_macro: To2_macro {
-            compatible = "zmk,behavior-macro";
-            label = "To2_macro";
-            #binding-cells = <0>;
-            bindings =
-                <&to 0>,
-                <&macro_wait_time 30>,
-                <&rgb_ug RGB_COLOR_HSB(250,100,50)>;
+        LH.Mclick {
+            bindings = <&mkp MB3>;
+            key-positions = <21 22 23>;
+        };
+
+        OSM_Shift {
+            bindings = <&sk LSHFT>;
+            key-positions = <29 28>;
+        };
+
+        CHG {
+            bindings = <&to 4>;
+            key-positions = <31 34>;
+            layers = <0>;
+        };
+
+        Base {
+            bindings = <&to 0>;
+            key-positions = <31 34>;
+            layers = <4>;
+        };
+
+        Select_All {
+            bindings = <&kp LC(A)>;
+            key-positions = <0 1>;
+        };
+    };
+
+    behaviors {
+        sf_shift: sf_shift {
+            compatible = "zmk,behavior-sticky-key";
+            label = "SF_SHIFT";
+            bindings = <&sk>;
+            #binding-cells = <1>;
+            release-after-ms = <1000>;
+            quick-release;
         };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        layer_0 {
+        Base {
             bindings = <
-&lt 3 Q  &kp W  &kp E     &kp R     &kp T        &kp Y      &kp U            &kp I      &kp O    &kp P
-&kp A    &kp S  &kp D     &kp F     &kp G        &kp H      &kp J            &kp K      &kp L    &kp ENTER
-&kp Z    &kp X  &kp C     &kp V     &kp B        &kp N      &kp M            &kp COMMA  &kp DOT  &kp FSLH
-                &mkp MB1  &mkp MB2  &lt 1 ESC    &kp SPACE  &lt 2 BACKSPACE
+&kp Q               &kp W           &kp E           &kp R             &kp T          &mt DEL Y       &kp U              &kp I            &kp O            &kp P
+&mt LEFT_CONTROL A  &mt LEFT_GUI S  &mt LEFT_ALT D  &mt LEFT_SHIFT F  &kp G          &mt HOME H      &mt RIGHT_SHIFT J  &mt RIGHT_ALT K  &mt RIGHT_GUI L  &mt SEMI APOS
+&mt LC(Z) Z         &mt LC(X) X     &mt LC(C) C     &mt LC(V) V       &kp B          &mt END N       &kp M              &kp COMMA        &kp DOT          &lt 3 SLASH
+                                    &to 3           &lt 1 BACKSPACE   &mt RET TAB    &mt ESCAPE RET  &lt 2 SPACE
             >;
         };
 
-        layer_1 {
+        LWR {
             bindings = <
-&kp F1          &kp F2     &kp F3        &kp F4    &kp F5     &kp F6     &kp F7            &kp F8         &kp F9     &kp F10
-&kp N1          &kp N2     &kp N3        &kp N4    &kp N5     &kp N6     &kp N7            &kp N8         &kp N9     &kp N0
-&kp LEFT_SHIFT  &kp LCTRL  &kp LEFT_ALT  &kp CAPS  &kp TAB    &kp MINUS  &kp LEFT_BRACKET  &kp SEMICOLON  &kp COMMA  &kp BACKSLASH
-                           &none         &none     &none      &kp F11    &kp F12
+&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3     &kp NUMBER_4       &kp N5     &kp NUMBER_6   &kp N7     &kp N8     &kp N9  &kp N0
+&mt LCTRL F1  &kp F2        &mt LEFT_ALT F3  &mt LEFT_SHIFT F4  &kp F5     &kp F6         &kp F7     &kp F8     &kp F9  &kp LS(F10)
+&kp LC(Z)     &kp LC(X)     &kp LC(C)        &kp LC(CAPS)       &kp F11    &kp F12        &kp COLON  &kp SLASH  &trans  &mt PAUSE_BREAK MINUS
+                            &trans           &trans             &trans     &kp BACKSPACE  &kp RET
             >;
         };
 
-        layer_2 {
+        RSE {
             bindings = <
-&none  &none           &none           &none            &none            &none      &none     &none    &none       &none
-&none  &none           &kp UP_ARROW    &none            &kp PAGE_UP      &none      &none     &none    &none       &none
-&none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp PAGE_DOWN    &kp EQUAL  &kp RBKT  &kp SQT  &kp PERIOD  &kp SLASH
-                       &none           &none            &none            &none      &none
+&kp EXCL   &kp AT      &kp LEFT_PARENTHESIS  &kp LEFT_BRACKET  &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp RIGHT_BRACKET    &kp RIGHT_PARENTHESIS  &kp PERCENT     &kp EQUAL
+&kp LCTRL  &kp DOLLAR  &kp UNDER             &kp LSHFT         &kp ASTRK         &kp PAGE_UP      &kp LEFT_ARROW       &kp UP_ARROW           &kp DOWN_ARROW  &kp RIGHT
+&kp POUND  &kp CARET   &kp PLUS              &kp AMPS          &kp PIPE          &kp PAGE_DOWN    &kp LA(PRINTSCREEN)  &none                  &none           &mt PAUSE_BREAK QUESTION
+                       &trans                &trans            &trans            &trans           &trans
             >;
         };
 
-        layer_3 {
+        MED {
             bindings = <
-&none  &none  &none  &none  &none    &none       &none         &none         &none         &none
-&none  &none  &none  &none  &none    &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3
-&none  &none  &none  &none  &none    &none       &none         &none         &none         &none
-              &none  &none  &none    &none       &none
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2     &bt BT_SEL 3      &bt BT_SEL 4    &ext_power EP_TOG  &out OUT_TOG  &none      &none     &bt BT_CLR
+&kp C_MUTE    &kp C_VOL_DN  &kp C_VOLUME_UP  &kp C_PLAY_PAUSE  &none           &none              &mkp LCLK     &mkp RCLK  &none     &none
+&none         &none         &kp C_PREV       &kp C_NEXT        &none           &none              &mkp MCLK     &mkp MB4   &mkp MB5  &none
+                            &to 0            &none             &none           &none              &none
+            >;
+        };
+
+        CHG {
+            bindings = <
+&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5      &kp NUMBER_6  &kp N7     &kp N8        &kp N9    &kp N0
+&kp LCTRL     &kp LEFT_GUI  &kp LEFT_ALT  &kp LSHFT     &kp HOME    &kp DEL       &kp LEFT   &kp UP_ARROW  &kp DOWN  &kp RIGHT
+&kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &kp END     &none         &kp COLON  &kp MINUS     &trans    &trans
+                            &kp ESCAPE    &trans        &trans      &trans        &trans
             >;
         };
 
