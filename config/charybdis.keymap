@@ -28,7 +28,6 @@
     // #define RAISE   2
     // #define MEDIA   3
     // #define CHANGE  4
-    // #define SCROLL  5
 
     combos {
         compatible = "zmk,combos";
@@ -122,7 +121,7 @@
             bindings = <
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2     &bt BT_SEL 3      &bt BT_SEL 4        &ext_power EP_TOG  &out OUT_TOG  &none      &none     &bt BT_CLR
 &kp C_MUTE    &kp C_VOL_DN  &kp C_VOLUME_UP  &kp C_PLAY_PAUSE  &msc MOVE_X(-10)    &msc MOVE_Y(10)    &mkp LCLK     &mkp RCLK  &none     &none
-&none         &mo 5         &kp C_PREV       &kp C_NEXT        &msc MOVE_X(10)     &msc MOVE_Y(-10)   &mkp MCLK     &mkp MB4   &mkp MB5  &none
+&trans        &mo 5         &kp C_PREV       &kp C_NEXT        &msc MOVE_X(10)     &msc MOVE_Y(-10)   &mkp MCLK     &mkp MB4   &mkp MB5  &none
                             &to 0            &none             &none               &none              &none
             >;
 
@@ -138,15 +137,6 @@
             >;
 
             label = "CHANGE";
-        };
-
-        Scroll {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans    &trans  &trans
-            >;
         };
     };
 };
