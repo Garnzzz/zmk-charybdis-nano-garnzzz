@@ -125,6 +125,16 @@
             release-after-ms = <1000>;
             quick-release;
         };
+
+        Layer_Switch: Layer_Switch {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_SWITCH";
+            bindings = <&mo>, <&to>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            hold-trigger-key-positions = <30>;
+        };
     };
 
     behaviors {
@@ -141,10 +151,10 @@
 
         Base {
             bindings = <
-&kp Q               &kp W           &kp E           &kp R             &kp T          &mt DEL Y       &kp U              &kp I            &kp O            &kp P
-&mt LEFT_CONTROL A  &mt LEFT_GUI S  &mt LEFT_ALT D  &mt LEFT_SHIFT F  &kp G          &mt HOME H      &mt RIGHT_SHIFT J  &mt RIGHT_ALT K  &mt RIGHT_GUI L  &mt SEMI APOS
-&mt LC(Z) Z         &mt LC(X) X     &mt LC(C) C     &mt LC(V) V       &kp B          &mt END N       &kp M              &kp COMMA        &kp DOT          &lt 3 SLASH
-                                    &to 3           &lt 1 BACKSPACE   &mt RET TAB    &mt ESCAPE RET  &lt 2 SPACE
+&kp Q               &kp W           &kp E              &kp R             &kp T          &mt DEL Y       &kp U              &kp I            &kp O            &kp P
+&mt LEFT_CONTROL A  &mt LEFT_GUI S  &mt LEFT_ALT D     &mt LEFT_SHIFT F  &kp G          &mt HOME H      &mt RIGHT_SHIFT J  &mt RIGHT_ALT K  &mt RIGHT_GUI L  &mt SEMI APOS
+&mt LC(Z) Z         &mt LC(X) X     &mt LC(C) C        &mt LC(V) V       &kp B          &mt END N       &kp M              &kp COMMA        &kp DOT          &lt 3 SLASH
+                                    &Layer_Switch 3 3  &lt 1 BACKSPACE   &mt RET TAB    &mt ESCAPE RET  &lt 2 SPACE
             >;
 
             label = "BASE";
