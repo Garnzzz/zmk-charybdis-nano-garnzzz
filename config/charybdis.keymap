@@ -190,9 +190,9 @@
 
         MEDIA {
             bindings = <
-&trans                   &trans                 &msc MOVE_X(-5)        &msc MOVE_X(5)               &trans             &trans            &msc MOVE_X(-10)  &msc MOVE_X(10)        &trans                   &trans
-&mt LEFT_CONTROL C_MUTE  &mt LEFT_GUI C_VOL_DN  &mt LEFT_ALT C_VOL_UP  &mt LEFT_SHIFT C_PLAY_PAUSE  &msc MOVE_Y(5)     &msc MOVE_Y(10)   &mt LSHFT LEFT    &mt LEFT_ALT UP_ARROW  &mt LEFT_GUI DOWN_ARROW  &mt LCTRL RIGHT
-&trans                   &trans                 &kp C_PREV             &kp C_NEXT                   &msc MOVE_Y(-5)    &msc MOVE_Y(-10)  &mkp MCLK         &mkp MB4               &mkp MB5                 &trans
+&trans                   &trans                 &msc MOVE_X(-5)        &msc MOVE_X(5)               &trans             &trans            &msc MOVE_X(-10)  &msc MOVE_X(10)  &trans    &trans
+&mt LEFT_CONTROL C_MUTE  &mt LEFT_GUI C_VOL_DN  &mt LEFT_ALT C_VOL_UP  &mt LEFT_SHIFT C_PLAY_PAUSE  &msc MOVE_Y(5)     &msc MOVE_Y(10)   &kp LEFT          &kp UP_ARROW     &kp DOWN  &kp RIGHT
+&trans                   &trans                 &kp C_PREV             &kp C_NEXT                   &msc MOVE_Y(-5)    &msc MOVE_Y(-10)  &mkp MCLK         &mkp MB4         &mkp MB5  &trans
                                                 &to 0                  &mkp LCLK                    &mkp RCLK          &mkp RCLK         &mkp LCLK
             >;
 
