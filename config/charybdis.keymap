@@ -6,20 +6,21 @@
 #include <dt-bindings/zmk/pointing.h>
 
 &lt {
-    tapping-term-ms = <200>;
+    tapping-term-ms = <120>;
     flavor = "balanced";
-    quick-tap-ms = <115>;
-    require-prior-idle-ms = <80>;
+    quick-tap-ms = <90>;
+    require-prior-idle-ms = <50>;
     hold-trigger-on-release;
     hold-trigger-key-positions = <31 34>;
 };
 
 &mt {
-    quick-tap-ms = <115>;
+    quick-tap-ms = <100>;
     require-prior-idle-ms = <50>;
     flavor = "balanced";
-    hold-trigger-key-positions = <11 12 13 14 30 32 33 16 17 18>;
+    hold-trigger-key-positions = <11 12 13 16 17 18 19 10 11>;
     hold-trigger-on-release;
+    tapping-term-ms = <150>;
 };
 
 / {
@@ -50,7 +51,7 @@
         };
 
         OSM_Shift {
-            bindings = <&sk LSHFT>;
+            bindings = <&sf_shift LSHFT>;
             key-positions = <29 28>;
             layers = <0>;
         };
@@ -128,7 +129,7 @@
             label = "SF_SHIFT";
             bindings = <&sk>;
             #binding-cells = <1>;
-            release-after-ms = <1000>;
+            release-after-ms = <700>;
             quick-release;
         };
 
@@ -140,6 +141,8 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             hold-trigger-key-positions = <30>;
+            flavor = "hold-preferred";
+            hold-trigger-on-release;
         };
     };
 
