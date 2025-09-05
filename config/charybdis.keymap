@@ -121,6 +121,12 @@
             key-positions = <18 19>;
             layers = <0>;
         };
+
+        Escape {
+            bindings = <&kp ESCAPE>;
+            key-positions = <0 1>;
+            layers = <1>;
+        };
     };
 
     behaviors {
@@ -171,10 +177,10 @@
 
         LOWER {
             bindings = <
-&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3     &kp NUMBER_4       &kp N5     &kp NUMBER_6   &kp N7             &kp N8           &kp N9  &kp N0
-&mt LCTRL F1  &kp F2        &mt LEFT_ALT F3  &mt LEFT_SHIFT F4  &kp F5     &kp F6         &mt LEFT_SHIFT F7  &mt LEFT_ALT F8  &kp F9  &mt LCTRL F10
-&kp SLASH     &kp STAR      &kp MINUS        &kp PLUS           &kp F11    &kp F12        &kp COLON          &trans           &trans  &mt PAUSE_BREAK MINUS
-                            &trans           &trans             &trans     &kp BACKSPACE  &kp RET
+&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3     &kp NUMBER_4       &kp N5     &kp NUMBER_6       &kp N7             &kp N8           &kp N9  &kp N0
+&mt LCTRL F1  &kp F2        &mt LEFT_ALT F3  &mt LEFT_SHIFT F4  &kp F5     &kp F6             &mt LEFT_SHIFT F7  &mt LEFT_ALT F8  &kp F9  &mt LCTRL F10
+&kp SLASH     &kp STAR      &kp MINUS        &kp PLUS           &kp F11    &kp F12            &kp COLON          &trans           &trans  &mt PAUSE_BREAK MINUS
+                            &trans           &trans             &trans     &mt RET BACKSPACE  &kp SPACE
             >;
 
             label = "LWR";
