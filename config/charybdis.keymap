@@ -201,7 +201,7 @@
             bindings = <
 &trans                   &trans                 &msc MOVE_X(-5)        &msc MOVE_X(5)               &trans             &trans            &msc MOVE_X(-10)  &msc MOVE_X(10)  &trans    &trans
 &mt LEFT_CONTROL C_MUTE  &mt LEFT_GUI C_VOL_DN  &mt LEFT_ALT C_VOL_UP  &mt LEFT_SHIFT C_PLAY_PAUSE  &msc MOVE_Y(5)     &msc MOVE_Y(10)   &kp LEFT          &kp UP_ARROW     &kp DOWN  &kp RIGHT
-&trans                   &trans                 &kp C_PREV             &kp C_NEXT                   &msc MOVE_Y(-5)    &msc MOVE_Y(-10)  &mkp MCLK         &mkp MB4         &mkp MB5  &trans
+&kp LC(Z)                &kp LC(X)              &mt LC(C) C_PREV       &mt LC(C_NEXT) C_NEXT        &msc MOVE_Y(-5)    &msc MOVE_Y(-10)  &mkp MCLK         &mkp MB4         &mkp MB5  &trans
                                                 &to 0                  &mkp LCLK                    &mkp RCLK          &mkp RCLK         &mkp LCLK
             >;
 
@@ -212,7 +212,7 @@
             bindings = <
 &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5      &kp NUMBER_6  &kp N7     &kp N8        &kp N9    &kp N0
 &kp LCTRL     &kp LEFT_GUI  &kp LEFT_ALT  &kp LSHFT     &kp HOME    &kp DEL       &kp LEFT   &kp UP_ARROW  &kp DOWN  &kp RIGHT
-&kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &kp END     &none         &kp COLON  &kp MINUS     &trans    &none
+&kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &kp END     &none         &kp COLON  &kp MINUS     &trans    &trans
                             &kp ESCAPE    &trans        &trans      &trans        &trans
             >;
 
