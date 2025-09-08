@@ -151,6 +151,17 @@
             flavor = "hold-preferred";
             hold-trigger-on-release;
         };
+
+        med_mt: med_mt {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MED_MT";
+            bindings = <&kp>, <&none>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            flavor = "balanced";
+            hold-trigger-key-positions = <20 21>;
+        };
     };
 
     behaviors {
@@ -200,9 +211,9 @@
 
         MEDIA {
             bindings = <
-&trans                   &trans                 &msc MOVE_X(-5)        &msc MOVE_X(5)               &trans             &trans            &msc MOVE_X(-10)  &msc MOVE_X(10)  &trans    &trans
+&none                    &none                  &msc MOVE_X(-5)        &msc MOVE_X(5)               &none              &none             &msc MOVE_X(-10)  &msc MOVE_X(10)  &none     &none
 &mt LEFT_CONTROL C_MUTE  &mt LEFT_GUI C_VOL_DN  &mt LEFT_ALT C_VOL_UP  &mt LEFT_SHIFT C_PLAY_PAUSE  &msc MOVE_Y(5)     &msc MOVE_Y(10)   &kp LEFT          &kp UP_ARROW     &kp DOWN  &kp RIGHT
-&kp LC(Z)                &kp LC(X)              &mt LC(C) C_PREV       &mt LC(C_NEXT) C_NEXT        &msc MOVE_Y(-5)    &msc MOVE_Y(-10)  &mkp MCLK         &mkp MB4         &mkp MB5  &trans
+&none                    &none                  &kp C_PREV             &kp C_NEXT                   &msc MOVE_Y(-5)    &msc MOVE_Y(-10)  &mkp MCLK         &mkp MB4         &mkp MB5  &none
                                                 &to 0                  &mkp LCLK                    &mkp RCLK          &mkp RCLK         &mkp LCLK
             >;
 
