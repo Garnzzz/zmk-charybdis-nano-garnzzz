@@ -114,7 +114,7 @@
         MOU.Ret.RH {
             bindings = <&kp RET>;
             key-positions = <26 27>;
-            layers = <4>;
+            layers = <4 1>;
         };
 
         colon {
