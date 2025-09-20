@@ -164,6 +164,18 @@
             flavor = "balanced";
             hold-trigger-key-positions = <20 21>;
         };
+
+        mse_scroll: mse_scroll {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MSE_SCROLL";
+            bindings = <&mo>, <&tog>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <100>;
+            flavor = "hold-preferred";
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <20 29>;
+        };
     };
 
     behaviors {
@@ -183,7 +195,7 @@
 &kp Q               &kp W           &kp E              &kp R             &kp T        &mt DEL Y       &kp U              &kp I            &kp O            &kp P
 &mt LEFT_CONTROL A  &mt LEFT_GUI S  &mt LEFT_ALT D     &mt LEFT_SHIFT F  &kp G        &mt HOME H      &mt RIGHT_SHIFT J  &mt RIGHT_ALT K  &mt RIGHT_GUI L  &mt LEFT_CONTROL APOS
 &mt LC(Z) Z         &mt LC(X) X     &mt LC(C) C        &mt LC(V) V       &kp B        &mt END N       &kp M              &kp COMMA        &kp DOT          &lt 4 SLASH
-                                    &layer_switch 4 4  &lt 1 BACKSPACE   &lt 5 TAB    &mt ESCAPE RET  &lt 2 SPACE
+                                    &layer_switch 4 4  &lt 1 BACKSPACE   &lt 6 TAB    &mt ESCAPE RET  &lt 2 SPACE
             >;
 
             label = "BSE";
@@ -224,13 +236,22 @@
 
         MOUSE {
             bindings = <
-&none             &none         &msc MOVE_X(-5)  &msc MOVE_X(5)  &none              &none             &msc MOVE_X(-10)  &msc MOVE_X(10)  &none     &none
-&kp LEFT_CONTROL  &kp LEFT_GUI  &kp LEFT_ALT     &kp LEFT_SHIFT  &msc MOVE_Y(5)     &msc MOVE_Y(10)   &kp LEFT          &kp UP_ARROW     &kp DOWN  &kp RIGHT
-&none             &mkp MB5      &mkp MB4         &mkp MCLK       &msc MOVE_Y(-5)    &msc MOVE_Y(-10)  &mkp MCLK         &mkp MB4         &mkp MB5  &none
-                                &to 0            &mkp LCLK       &mkp RCLK          &mkp RCLK         &mkp LCLK
+&kp LC(A)          &kp LC(W)     &msc MOVE_X(-5)  &msc MOVE_X(5)  &none              &none             &msc MOVE_X(-10)  &msc MOVE_X(10)  &none     &none
+&kp LEFT_CONTROL   &kp LEFT_GUI  &kp LEFT_ALT     &kp LEFT_SHIFT  &msc MOVE_Y(5)     &msc MOVE_Y(10)   &kp LEFT          &kp UP_ARROW     &kp DOWN  &kp RIGHT
+&layer_switch 5 5  &mkp MB5      &mkp MB4         &mkp MCLK       &msc MOVE_Y(-5)    &msc MOVE_Y(-10)  &mkp MCLK         &mkp MB4         &mkp MB5  &layer_switch 5 5
+                                 &to 0            &mkp LCLK       &mkp RCLK          &mkp RCLK         &mkp LCLK
             >;
 
             label = "MSE";
+        };
+
+        Scroll {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans    &trans  &trans
+            >;
         };
 
         MEDIA {
@@ -261,7 +282,7 @@
 
         Settings {
             if-layers = <1 2>;
-            then-layer = <6>;
+            then-layer = <7>;
         };
     };
 };
