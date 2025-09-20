@@ -1,7 +1,5 @@
 zmk-config for charybdis (4x6)
 
-![my_keymap](https://github.com/user-attachments/assets/731eaf2c-106c-4ab0-8a41-185e87d92c15)
-
 ![Upload<svg width="676" height="2296" viewBox="0 0 676 2296" class="keymap" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <style>/* inherit to force styles through use tags */
 svg path {
