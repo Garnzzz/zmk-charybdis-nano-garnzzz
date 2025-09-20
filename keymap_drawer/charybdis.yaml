@@ -165,7 +165,7 @@ layers:
   - UP ARROW
   - DOWN
   - RIGHT
-  - {t: Scroll, h: Scroll}
+  - Scroll
   - '&mkp MB5'
   - '&mkp MB4'
   - '&mkp MCLK'
@@ -174,7 +174,7 @@ layers:
   - '&mkp MCLK'
   - '&mkp MB4'
   - '&mkp MB5'
-  - {t: Scroll, h: Scroll, type: held}
+  - {t: Scroll, type: held}
   - {t: BSE, h: toggle}
   - '&mkp LCLK'
   - '&mkp RCLK'
