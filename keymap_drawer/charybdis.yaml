@@ -166,20 +166,56 @@ layers:
   - DOWN
   - RIGHT
   - Scroll
-  - '&mkp MB5'
+  - SNP
   - '&mkp MB4'
   - '&mkp MCLK'
   - ''
   - ''
   - '&mkp MCLK'
   - '&mkp MB4'
-  - '&mkp MB5'
+  - SNP
   - {t: Scroll, type: held}
   - {t: BSE, h: toggle}
   - '&mkp LCLK'
   - '&mkp RCLK'
   - '&mkp RCLK'
   - '&mkp LCLK'
+  SNP:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   Scroll:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
