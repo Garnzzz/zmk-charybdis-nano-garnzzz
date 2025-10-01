@@ -130,6 +130,12 @@
             key-positions = <0 1>;
             layers = <1>;
         };
+
+        Undo {
+            bindings = <&kp LC(Z)>;
+            key-positions = <20 21>;
+            layers = <0>;
+        };
     };
 
     behaviors {
@@ -193,8 +199,8 @@
         BASE {
             bindings = <
 &kp Q               &kp W           &kp E              &kp R             &kp T        &mt DEL Y       &kp U              &kp I            &kp O            &kp P
-&mt LEFT_CONTROL A  &mt LEFT_GUI S  &mt LEFT_ALT D     &mt LEFT_SHIFT F  &kp G        &mt HOME H      &mt RIGHT_SHIFT J  &mt RIGHT_ALT K  &mt RIGHT_GUI L  &mt LEFT_CONTROL APOS
-&mt LC(Z) Z         &mt LC(X) X     &mt LC(C) C        &mt LC(V) V       &kp B        &mt END N       &kp M              &kp COMMA        &kp DOT          &lt 4 SLASH
+&mt LEFT_CONTROL A  &mt LEFT_GUI S  &mt LEFT_ALT D     &mt LEFT_SHIFT F  &lt 6 G      &mt HOME H      &mt RIGHT_SHIFT J  &mt RIGHT_ALT K  &mt RIGHT_GUI L  &mt LEFT_CONTROL APOS
+&lt 4 Z             &mt LC(X) X     &mt LC(C) C        &mt LC(V) V       &kp B        &mt END N       &kp M              &kp COMMA        &kp DOT          &lt 4 SLASH
                                     &layer_switch 4 4  &lt 1 BACKSPACE   &lt 7 TAB    &mt ESCAPE RET  &lt 2 SPACE
             >;
 
@@ -226,7 +232,7 @@
         CHANGE {
             bindings = <
 &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5         &kp NUMBER_6  &kp N7     &kp N8        &kp N9    &kp N0
-&kp LCTRL     &kp LEFT_GUI  &kp LEFT_ALT  &kp LSHFT     &kp HOME       &kp DEL       &kp LEFT   &kp UP_ARROW  &kp DOWN  &kp RIGHT
+&kp LCTRL     &kp LEFT_GUI  &kp LEFT_ALT  &kp LSHFT     &lt 6 HOME     &kp DEL       &kp LEFT   &kp UP_ARROW  &kp DOWN  &kp RIGHT
 &kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &kp END        &none         &kp COLON  &kp MINUS     &trans    &trans
                             &lt 4 ESCAPE  &trans        &mt RET TAB    &trans        &trans
             >;
@@ -237,8 +243,8 @@
         MOUSE {
             bindings = <
 &kp LC(A)         &kp LC(W)     &kp LC(E)     &kp LC(R)       &kp LC(T)    &none      &none      &none         &none     &none
-&kp LEFT_CONTROL  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_SHIFT  &none        &none      &kp LEFT   &kp UP_ARROW  &kp DOWN  &kp RIGHT
-&mo 6             &mo 5         &mkp MB4      &mkp MCLK       &none        &none      &mkp MCLK  &mkp MB4      &mo 5     &mo 6
+&kp LEFT_CONTROL  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_SHIFT  &mo 6        &tog 6     &kp LEFT   &kp UP_ARROW  &kp DOWN  &kp RIGHT
+&trans            &mo 5         &mkp MB4      &mkp MCLK       &none        &none      &mkp MCLK  &mkp MB4      &mo 5     &trans
                                 &to 0         &mkp LCLK       &mkp RCLK    &mkp RCLK  &mkp LCLK
             >;
 
@@ -257,7 +263,7 @@
         Scroll {
             bindings = <
 &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &tog 4  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
                 &trans  &trans  &trans    &trans  &trans
             >;
