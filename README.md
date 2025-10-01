@@ -2,12 +2,12 @@ zmk-config for charybdis (4x6)
 
 ![charybdis](https://github.com/user-attachments/assets/2e3983bc-1a0c-4002-8a43-2083883f1c56)
 <svg width="676" height="2576" viewBox="0 0 676 2576" class="keymap" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<style>/* inherit to force styles through use tags */
+<style>
 svg path {
     fill: inherit;
 }
 
-/* font and background color specifications */
+
 svg.keymap {
     font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
     font-size: 14px;
@@ -16,7 +16,7 @@ svg.keymap {
     fill: #24292e;
 }
 
-/* default key styling */
+
 rect.key {
     fill: #f6f8fa;
 }
@@ -26,22 +26,22 @@ rect.key, rect.combo {
     stroke-width: 1;
 }
 
-/* default key side styling, only used is draw_key_sides is set */
+
 rect.side {
     filter: brightness(90%);
 }
 
-/* color accent for combo boxes */
+
 rect.combo, rect.combo-separate {
     fill: #cdf;
 }
 
-/* color accent for held keys */
+
 rect.held, rect.combo.held {
     fill: #fdd;
 }
 
-/* color accent for ghost (optional) keys */
+
 rect.ghost, rect.combo.ghost {
     stroke-dasharray: 4, 4;
     stroke-width: 2;
@@ -52,7 +52,7 @@ text {
     dominant-baseline: middle;
 }
 
-/* styling for layer labels */
+
 text.label {
     font-weight: bold;
     text-anchor: start;
@@ -61,7 +61,7 @@ text.label {
     paint-order: stroke;
 }
 
-/* styling for optional footer */
+
 text.footer {
     text-anchor: end;
     dominant-baseline: auto;
@@ -70,7 +70,7 @@ text.footer {
     paint-order: stroke;
 }
 
-/* styling for combo tap, and key non-tap label text */
+
 text.combo, text.hold, text.shifted, text.left, text.right {
     font-size: 11px;
 }
@@ -97,35 +97,33 @@ text.layer-activator {
     text-decoration: underline;
 }
 
-/* styling for hold/shifted label text in combo box */
+
 text.combo.hold, text.combo.shifted, text.combo.left, text.combo.right {
     font-size: 8px;
 }
 
-/* lighter symbol for transparent keys */
+
 text.trans {
     fill: #7b7e81;
 }
 
-/* styling for combo dendrons */
+
 path.combo {
     stroke-width: 1;
     stroke: gray;
     fill: none;
 }
 
-/* Start Tabler Icons Cleanup */
-/* cannot use height/width with glyphs */
+
 .icon-tabler > path {
     fill: inherit;
     stroke: inherit;
     stroke-width: 2;
 }
-/* hide tabler's default box */
 .icon-tabler > path[stroke="none"][fill="none"] {
     visibility: hidden;
 }
-/* End Tabler Icons Cleanup */
+
 </style>
 <g transform="translate(30, 0)" class="layer-BSE">
 <text x="0" y="28" class="label" id="BSE">BSE:</text>
