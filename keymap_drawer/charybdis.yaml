@@ -15,13 +15,13 @@ layers:
   - {t: S, h: LEFT GUI}
   - {t: D, h: LEFT ALT}
   - {t: F, h: LEFT SHIFT}
-  - G
+  - {t: G, h: Scroll}
   - {t: H, h: HOME}
   - {t: J, h: RIGHT SHIFT}
   - {t: K, h: RIGHT ALT}
   - {t: L, h: RIGHT GUI}
   - {t: '''', h: LEFT CONTROL}
-  - {t: Z, h: Ctl+Z}
+  - {t: Z, h: MSE}
   - {t: X, h: Ctl+X}
   - {t: C, h: Ctl+C}
   - {t: V, h: Ctl+V}
@@ -123,7 +123,7 @@ layers:
   - LEFT GUI
   - LEFT ALT
   - LSHFT
-  - HOME
+  - {t: HOME, h: Scroll}
   - DEL
   - LEFT
   - UP ARROW
@@ -159,13 +159,13 @@ layers:
   - LEFT GUI
   - LEFT ALT
   - LEFT SHIFT
-  - ''
-  - ''
+  - Scroll
+  - {t: Scroll, h: toggle}
   - LEFT
   - UP ARROW
   - DOWN
   - RIGHT
-  - Scroll
+  - {type: held}
   - SNP
   - '&mkp MB4'
   - '&mkp MCLK'
@@ -174,7 +174,7 @@ layers:
   - '&mkp MCLK'
   - '&mkp MB4'
   - SNP
-  - {t: Scroll, type: held}
+  - {t: ▽, type: trans}
   - {t: BSE, h: toggle}
   - '&mkp LCLK'
   - '&mkp RCLK'
@@ -201,7 +201,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -210,7 +210,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -231,13 +231,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {type: held}
+  - {t: MSE, h: toggle}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -246,7 +241,12 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -373,3 +373,6 @@ combos:
 - p: [0, 1]
   k: ESCAPE
   l: [LWR]
+- p: [20, 21]
+  k: Ctl+Z
+  l: [BSE]
