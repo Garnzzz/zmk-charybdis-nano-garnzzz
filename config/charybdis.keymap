@@ -159,29 +159,6 @@
             flavor = "hold-preferred";
             hold-trigger-on-release;
         };
-
-        med_mt: med_mt {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MED_MT";
-            bindings = <&kp>, <&none>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            flavor = "balanced";
-            hold-trigger-key-positions = <20 21>;
-        };
-
-        mse_scroll: mse_scroll {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MSE_SCROLL";
-            bindings = <&mo>, <&tog>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <100>;
-            flavor = "hold-preferred";
-            hold-trigger-on-release;
-            hold-trigger-key-positions = <20 29>;
-        };
     };
 
     behaviors {
@@ -232,8 +209,8 @@
         CHANGE {
             bindings = <
 &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5         &kp NUMBER_6  &kp N7     &kp N8        &kp N9    &kp N0
-&kp LCTRL     &kp LEFT_GUI  &kp LEFT_ALT  &kp LSHFT     &lt 6 HOME     &kp DEL       &kp LEFT   &kp UP_ARROW  &kp DOWN  &kp RIGHT
-&kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &kp END        &none         &kp COLON  &kp MINUS     &trans    &trans
+&kp LCTRL     &kp LEFT_GUI  &kp LEFT_ALT  &kp LSHFT     &lt 6 HOME     &kp PG_UP     &kp LEFT   &kp UP_ARROW  &kp DOWN  &kp RIGHT
+&lt 4 LC(Z)   &kp LC(X)     &kp LC(C)     &kp LC(V)     &lt 5 END      &kp PG_DN     &kp COLON  &kp MINUS     &trans    &trans
                             &lt 4 ESCAPE  &trans        &mt RET TAB    &trans        &trans
             >;
 
