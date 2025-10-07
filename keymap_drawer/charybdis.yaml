@@ -124,17 +124,17 @@ layers:
   - LEFT ALT
   - LSHFT
   - {t: HOME, h: Scroll}
-  - DEL
+  - PG UP
   - LEFT
   - UP ARROW
   - DOWN
   - RIGHT
-  - Ctl+Z
+  - {t: Ctl+Z, h: MSE}
   - Ctl+X
   - Ctl+C
   - Ctl+V
-  - END
-  - ''
+  - {t: END, h: SNP}
+  - PG DN
   - ':'
   - '-'
   - {t: ▽, type: trans}
