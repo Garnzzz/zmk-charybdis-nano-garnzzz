@@ -186,9 +186,9 @@
 
         LOWER {
             bindings = <
-&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3     &kp NUMBER_4       &kp N5     &kp NUMBER_6       &kp N7             &kp N8           &kp N9         &kp N0
-&mt LCTRL F1  &kp F2        &mt LEFT_ALT F3  &mt LEFT_SHIFT F4  &kp F5     &kp F6             &mt LEFT_SHIFT F7  &mt LEFT_ALT F8  &kp F9         &mt LCTRL F10
-&kp SLASH     &kp STAR      &kp MINUS        &kp PLUS           &kp F11    &kp F12            &kp COLON          &trans           &kp BACKSLASH  &mt PAUSE_BREAK MINUS
+&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3     &kp NUMBER_4       &kp N5     &kp NUMBER_6       &kp N7             &kp N8           &kp N9  &kp N0
+&mt LCTRL F1  &kp F2        &mt LEFT_ALT F3  &mt LEFT_SHIFT F4  &kp F5     &kp F6             &mt LEFT_SHIFT F7  &mt LEFT_ALT F8  &kp F9  &mt LCTRL F10
+&kp SLASH     &kp STAR      &kp MINUS        &kp PLUS           &kp F11    &kp F12            &kp COLON          &trans           &trans  &mt PAUSE_BREAK MINUS
                             &trans           &trans             &trans     &mt RET BACKSPACE  &kp SPACE
             >;
 
@@ -199,7 +199,7 @@
             bindings = <
 &kp EXCL   &kp AT      &kp LEFT_PARENTHESIS  &kp LEFT_BRACKET  &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp RIGHT_BRACKET    &kp RIGHT_PARENTHESIS   &kp PERCENT               &kp EQUAL
 &kp LCTRL  &kp DOLLAR  &kp UNDER             &kp LSHFT         &kp ASTRK         &kp PAGE_UP      &mt RSHFT LEFT       &mt RIGHT_ALT UP_ARROW  &mt RIGHT_GUI DOWN_ARROW  &mt RCTRL RIGHT
-&kp POUND  &kp CARET   &kp PLUS              &kp AMPS          &kp PIPE          &kp PAGE_DOWN    &kp LA(PRINTSCREEN)  &none                   &kp TILDE                 &mt PAUSE_BREAK QUESTION
+&kp POUND  &kp CARET   &kp PLUS              &kp AMPS          &kp PIPE          &kp PAGE_DOWN    &kp LA(PRINTSCREEN)  &kp BACKSLASH           &kp TILDE                 &mt PAUSE_BREAK QUESTION
                        &key_repeat           &trans            &trans            &trans           &trans
             >;
 
