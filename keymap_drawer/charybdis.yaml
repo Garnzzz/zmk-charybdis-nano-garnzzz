@@ -65,7 +65,7 @@ layers:
   - F12
   - ':'
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - \
   - {t: '-', h: PAUSE BREAK}
   - {t: ▽, type: trans}
   - {type: held}
