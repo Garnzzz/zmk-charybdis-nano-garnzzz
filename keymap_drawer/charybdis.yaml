@@ -334,9 +334,6 @@ combos:
 - p: [21, 22, 23]
   k: '&mkp MB3'
   l: [BSE, CHG]
-- p: [29, 28]
-  k: {t: LSHFT, h: sticky}
-  l: [BSE]
 - p: [32, 33]
   k: {t: CHG, h: toggle}
   l: [BSE]
