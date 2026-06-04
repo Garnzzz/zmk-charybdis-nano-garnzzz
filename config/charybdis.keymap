@@ -53,12 +53,6 @@
             layers = <0 3>;
         };
 
-        OSM_Shift {
-            bindings = <&sf_shift LSHFT>;
-            key-positions = <29 28>;
-            layers = <0>;
-        };
-
         CHG {
             bindings = <&to 3>;
             key-positions = <32 33>;
