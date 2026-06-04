@@ -31,7 +31,7 @@ layers:
   - ','
   - .
   - {t: /, h: MSE}
-  - {t: MSE, h: MSE}
+  - {t: LEFT SHIFT, h: sticky}
   - {t: BACKSPACE, h: LWR}
   - {t: TAB, h: MED}
   - {t: RET, h: ESCAPE}
